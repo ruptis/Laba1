@@ -7,6 +7,7 @@ public class RectangleArea {
     private final double maxY;
 
     public RectangleArea(double minX, double minY, double maxX, double maxY) {
+        validate(minX, minY, maxX, maxY);
         this.minX = minX;
         this.minY = minY;
         this.maxX = maxX;
@@ -15,5 +16,14 @@ public class RectangleArea {
 
     public boolean isPointInside(double x, double y) {
         return x >= minX && x <= maxX && y >= minY && y <= maxY;
+    }
+
+    private void validate(double minX, double minY, double maxX, double maxY) {
+        if (minX > maxX) {
+            throw new IllegalArgumentException("minX > maxX");
+        }
+        if (minY > maxY) {
+            throw new IllegalArgumentException("minY > maxY");
+        }
     }
 }
