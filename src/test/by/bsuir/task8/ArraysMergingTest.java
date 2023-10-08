@@ -10,14 +10,6 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ArraysMergingTest {
-    @ParameterizedTest
-    @MethodSource
-    public void getInsertPositionsTestEmptySource(double[] source, double[] destination) {
-        int[] result = ArraysMerging.getInsertPositions(source, destination);
-        double[] newSequence = getNewSequence(source, destination, result);
-        assertTrue(isSequenceConsistsOf(newSequence, source, destination) && isIncreasingSequence(newSequence));
-    }
-
     @SuppressWarnings("unused")
     private static Stream<Arguments> getInsertPositionsTestEmptySource() {
         return Stream.of(
@@ -32,6 +24,14 @@ public class ArraysMergingTest {
                 Arguments.of(new double[]{4.0, 5.0, 6.0}, new double[]{1.0, 2.0, 3.0}),
                 Arguments.of(new double[]{1.0, 2.0, 2.0, 3.0, 3.0, 3.0}, new double[]{1.0, 2.0, 3.0, 3.0, 3.0, 4.0})
         );
+    }
+
+    @ParameterizedTest
+    @MethodSource
+    public void getInsertPositionsTestEmptySource(double[] source, double[] destination) {
+        int[] result = ArraysMerging.getInsertPositions(source, destination);
+        double[] newSequence = getNewSequence(source, destination, result);
+        assertTrue(isSequenceConsistsOf(newSequence, source, destination) && isIncreasingSequence(newSequence));
     }
 
     private double[] getNewSequence(double[] source, double[] destination, int[] insertPositions) {

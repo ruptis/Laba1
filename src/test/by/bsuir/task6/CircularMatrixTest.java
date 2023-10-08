@@ -2,7 +2,8 @@ package test.by.bsuir.task6;
 
 import main.by.bsuir.task6.CircularMatrix;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class CircularMatrixTest {
 

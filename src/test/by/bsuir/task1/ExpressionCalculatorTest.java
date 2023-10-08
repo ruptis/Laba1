@@ -9,13 +9,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 public class ExpressionCalculatorTest {
-    @ParameterizedTest
-    @MethodSource
-    public void calculateExpressionTest(double x, double y, double expected) {
-        double actual = ExpressionCalculator.calculateExpression(x, y);
-        Assertions.assertEquals(expected, actual, 0.0001);
-    }
-
     @SuppressWarnings("unused")
     private static Stream<Arguments> calculateExpressionTest() {
         return Stream.of(
@@ -26,5 +19,12 @@ public class ExpressionCalculatorTest {
                 Arguments.of(1.0, 1.0, 1.913410905),
                 Arguments.of(1.0, -1.0, 1.50)
         );
+    }
+
+    @ParameterizedTest
+    @MethodSource
+    public void calculateExpressionTest(double x, double y, double expected) {
+        double actual = ExpressionCalculator.calculateExpression(x, y);
+        Assertions.assertEquals(expected, actual, 0.0001);
     }
 }

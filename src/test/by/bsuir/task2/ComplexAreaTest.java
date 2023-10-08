@@ -1,9 +1,11 @@
 package test.by.bsuir.task2;
 
-import main.by.bsuir.task2.RectangleArea;
 import main.by.bsuir.task2.ComplexArea;
+import main.by.bsuir.task2.RectangleArea;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ComplexAreaTest {
 

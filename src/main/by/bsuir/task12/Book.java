@@ -22,44 +22,44 @@ public class Book implements Cloneable, Comparable<Book> {
         this("", "", 0, 0);
     }
 
-    public static void setEdition(int edition) {
-        Book.edition = edition;
-    }
-
     public static int getEdition() {
         return edition;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public static void setEdition(int edition) {
+        Book.edition = edition;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getAuthor() {
         return author;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public int getPrice() {
         return price;
     }
 
-    public void setIsbn(int isbn) {
-        this.isbn = isbn;
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public int getIsbn() {
         return isbn;
+    }
+
+    public void setIsbn(int isbn) {
+        this.isbn = isbn;
     }
 
     @Override

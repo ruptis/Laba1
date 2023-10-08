@@ -25,14 +25,6 @@ class SortingTest {
         reverseArray(reversedArray);
     }
 
-    @ParameterizedTest
-    @MethodSource
-    public void sortTest(double[] array, double[] expected) {
-        double[] actual = Arrays.copyOf(array, array.length);
-        Sorting.sort(actual);
-        assertArrayEquals(expected, actual);
-    }
-
     @SuppressWarnings("unused")
     private static Stream<Arguments> sortTest() {
         return Stream.of(
@@ -59,5 +51,13 @@ class SortingTest {
             array[i] = array[length - i - 1];
             array[length - i - 1] = temp;
         }
+    }
+
+    @ParameterizedTest
+    @MethodSource
+    public void sortTest(double[] array, double[] expected) {
+        double[] actual = Arrays.copyOf(array, array.length);
+        Sorting.sort(actual);
+        assertArrayEquals(expected, actual);
     }
 }

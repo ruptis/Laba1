@@ -10,13 +10,6 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MinRemovalsForIncreasingSequenceTest {
-    @ParameterizedTest
-    @MethodSource
-    public void getMinRemovalsTest(int[] array, int expected) {
-        int actual = MinRemovalsForIncreasingSequence.getMinRemovals(array);
-        assertEquals(expected, actual);
-    }
-
     @SuppressWarnings("unused")
     private static Stream<Arguments> getMinRemovalsTest() {
         return Stream.of(
@@ -27,5 +20,12 @@ class MinRemovalsForIncreasingSequenceTest {
                 Arguments.of(new int[]{4, 7, 13, 8, 2, 6, 2, 6, 5, 9, 34, 13, 56, 2, 0,
                         -1, 35, 355, 355, 454, 3434}, 12)
         );
+    }
+
+    @ParameterizedTest
+    @MethodSource
+    public void getMinRemovalsTest(int[] array, int expected) {
+        int actual = MinRemovalsForIncreasingSequence.getMinRemovals(array);
+        assertEquals(expected, actual);
     }
 }

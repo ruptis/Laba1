@@ -22,20 +22,20 @@ public class ProgrammerBook extends Book {
         this("", "", 0, 0, "", 0);
     }
 
-    public void setLanguage(String language) {
-        this.language = language;
-    }
-
     public String getLanguage() {
         return language;
     }
 
-    public void setLevel(int level) {
-        this.level = level;
+    public void setLanguage(String language) {
+        this.language = language;
     }
 
     public int getLevel() {
         return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 
     @Override
@@ -55,10 +55,10 @@ public class ProgrammerBook extends Book {
 
     @Override
     public boolean equals(Object obj) {
-       return (obj == this) ||
-               (obj instanceof ProgrammerBook book) &&
-                (super.equals(book)) &&
-                book.level == level &&
-                book.language.equals(language);
+        return (obj == this) ||
+                (obj instanceof ProgrammerBook book) &&
+                        (super.equals(book)) &&
+                        book.level == level &&
+                        book.language.equals(language);
     }
 }

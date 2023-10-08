@@ -11,13 +11,6 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class PrimeArraySelectorTest {
-    @ParameterizedTest
-    @MethodSource
-    public void getIndexesOfPrimesTestArray(Integer[] array, int[] expected) {
-        int[] actual = PrimeArraySelector.getIndexesOfPrimes(array);
-        assertArrayEquals(expected, actual);
-    }
-
     @SuppressWarnings("unused")
     private static Stream<Arguments> getIndexesOfPrimesTestArray() {
         return Stream.of(
@@ -31,13 +24,6 @@ class PrimeArraySelectorTest {
         );
     }
 
-    @ParameterizedTest
-    @MethodSource
-    public void getIndexesOfPrimesTestList(List<Integer> list, int[] expected) {
-        int[] actual = PrimeArraySelector.getIndexesOfPrimes(list);
-        assertArrayEquals(expected, actual);
-    }
-
     @SuppressWarnings("unused")
     private static Stream<Arguments> getIndexesOfPrimesTestList() {
         return Stream.of(
@@ -49,5 +35,19 @@ class PrimeArraySelectorTest {
                 Arguments.of(List.of(104729, 1299827, 15485867), new int[]{0, 1, 2}),
                 Arguments.of(List.of(-2, -3, -5, -7), new int[]{})
         );
+    }
+
+    @ParameterizedTest
+    @MethodSource
+    public void getIndexesOfPrimesTestArray(Integer[] array, int[] expected) {
+        int[] actual = PrimeArraySelector.getIndexesOfPrimes(array);
+        assertArrayEquals(expected, actual);
+    }
+
+    @ParameterizedTest
+    @MethodSource
+    public void getIndexesOfPrimesTestList(List<Integer> list, int[] expected) {
+        int[] actual = PrimeArraySelector.getIndexesOfPrimes(list);
+        assertArrayEquals(expected, actual);
     }
 }

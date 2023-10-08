@@ -10,6 +10,14 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BasketTest {
+    private static Ball[] mergeArrays(Ball[] redBalls, Ball[] greenBalls, Ball[] blueBalls) {
+        Ball[] balls = new Ball[redBalls.length + greenBalls.length + blueBalls.length];
+        System.arraycopy(redBalls, 0, balls, 0, redBalls.length);
+        System.arraycopy(greenBalls, 0, balls, redBalls.length, greenBalls.length);
+        System.arraycopy(blueBalls, 0, balls, redBalls.length + greenBalls.length, blueBalls.length);
+        return balls;
+    }
+
     @Test
     public void getTotalWeightTest() {
         double[] ballsWeights = {0.5, 0.7, 0.8, 0.6};
@@ -62,13 +70,5 @@ class BasketTest {
         assertEquals(expectedRedBallsCount, redBallsCount);
         assertEquals(expectedGreenBallsCount, greenBallsCount);
         assertEquals(expectedBlueBallsCount, blueBallsCount);
-    }
-
-    private static Ball[] mergeArrays(Ball[] redBalls, Ball[] greenBalls, Ball[] blueBalls) {
-        Ball[] balls = new Ball[redBalls.length + greenBalls.length + blueBalls.length];
-        System.arraycopy(redBalls, 0, balls, 0, redBalls.length);
-        System.arraycopy(greenBalls, 0, balls, redBalls.length, greenBalls.length);
-        System.arraycopy(blueBalls, 0, balls, redBalls.length + greenBalls.length, blueBalls.length);
-        return balls;
     }
 }

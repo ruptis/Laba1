@@ -9,6 +9,8 @@ import java.util.Random;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BookTest {
+    private static final Random RANDOM = new Random();
+
     @Test
     public void cloneTest() throws CloneNotSupportedException {
         Book originalBook = new Book("Title", "Author", 100, 12345);
@@ -36,10 +38,9 @@ class BookTest {
 
     @Test
     public void compareToTestSorting() {
-        Random random = new Random();
         Book[] books = new Book[100];
         for (int i = 0; i < 100; i++) {
-            books[i] = new Book("Title" + i, "Author" + i, 100 + i, random.nextInt());
+            books[i] = new Book("Title" + i, "Author" + i, 100 + i, RANDOM.nextInt());
         }
 
         Arrays.sort(books);

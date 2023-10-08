@@ -3,7 +3,8 @@ package test.by.bsuir.task4;
 import main.by.bsuir.task4.PrimeNumberChecker;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class PrimeNumberCheckerTest {
     private static final int[] PRIME_NUMBERS = {2, 3, 5, 7, 11, 13, 17, 104729, 1299827, 15485867};

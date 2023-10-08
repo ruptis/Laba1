@@ -3,7 +3,7 @@ package main.by.bsuir.task9;
 import java.awt.*;
 
 public class Main {
-    private static final Ball[] BALLS = new Ball[] {
+    private static final Ball[] BALLS = new Ball[]{
             new Ball(Color.RED, 1.0),
             new Ball(Color.BLUE, 2.0),
             new Ball(Color.GREEN, 3.0),
