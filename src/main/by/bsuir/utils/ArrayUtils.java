@@ -1,17 +1,25 @@
 package main.by.bsuir.utils;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.function.Predicate;
 
 public class ArrayUtils {
     private ArrayUtils() {
     }
 
-    public static List<Integer> toList(int[] array) {
-        List<Integer> list = new ArrayList<>(array.length);
-        for (int i : array) {
-            list.add(i);
+    public static <T> int[] getIndexesOf(T[] array, Predicate<? super T> predicate) {
+        int[] indexes = new int[array.length];
+        int index = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (predicate.test(array[i])) {
+                indexes[index++] = i;
+            }
         }
-        return list;
+        return trim(indexes, index);
+    }
+
+    public static int[] trim(int[] indexes, int index) {
+        int[] result = new int[index];
+        System.arraycopy(indexes, 0, result, 0, index);
+        return result;
     }
 }
