@@ -50,7 +50,7 @@ public class ProgrammerBook extends Book {
     @Override
     public int hashCode() {
         int result = super.hashCode();
-        result = 31 * result + language.hashCode();
+        result = 31 * result + Objects.hashCode(language);
         result = 31 * result + level;
         return result;
     }

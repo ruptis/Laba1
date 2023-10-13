@@ -72,8 +72,8 @@ public class Book implements Cloneable, Comparable<Book> {
     @Override
     public int hashCode() {
         int result = 17;
-        result = 31 * result + title.hashCode();
-        result = 31 * result + author.hashCode();
+        result = 31 * result + Objects.hashCode(title);
+        result = 31 * result + Objects.hashCode(author);
         result = 31 * result + price;
         result = 31 * result + edition;
         return result;
