@@ -1,5 +1,7 @@
 package main.by.bsuir.task12;
 
+import java.util.Objects;
+
 public class Book implements Cloneable, Comparable<Book> {
     private static int edition;
     private String title;
@@ -64,11 +66,7 @@ public class Book implements Cloneable, Comparable<Book> {
 
     @Override
     public String toString() {
-        return getClass().getName() + "@"
-                + "title=" + title
-                + ", author=" + author
-                + ", price=" + price
-                + ", edition=" + edition;
+        return getClass().getName() + "@" + "title=" + title + ", author=" + author + ", price=" + price + ", edition=" + edition;
     }
 
     @Override
@@ -85,7 +83,9 @@ public class Book implements Cloneable, Comparable<Book> {
     public boolean equals(Object obj) {
         return (obj == this) ||
                 ((obj instanceof Book book) &&
-                        (book.price == price) && book.title.equals(title) && book.author.equals(author));
+                        (book.price == price) &&
+                        Objects.equals(book.title, title) &&
+                        Objects.equals(book.author, author));
     }
 
     @Override

@@ -2,6 +2,8 @@ package main.by.bsuir.task13;
 
 import main.by.bsuir.task12.Book;
 
+import java.util.Objects;
+
 public class ProgrammerBook extends Book {
     private String language;
     private int level;
@@ -59,6 +61,6 @@ public class ProgrammerBook extends Book {
                 (obj instanceof ProgrammerBook book) &&
                         (super.equals(book)) &&
                         book.level == level &&
-                        book.language.equals(language);
+                        Objects.equals(book.language, language);
     }
 }
